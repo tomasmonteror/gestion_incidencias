@@ -160,7 +160,7 @@ function notificarResueltos() {
         cuerpoMensaje += "--------------------------------------------------\n\n";
         cuerpoMensaje += "Te volveremos a avisar en cuanto la incidencia quede solucionada.\n\n¡Un saludo!";
         
-        GmailApp.sendEmail(emailDestino, asunto, cuerpoMensaje);
+        MailApp.sendEmail(emailDestino, asunto, cuerpoMensaje);
         
         // Le ponemos el [⏳] a la tarjeta en Trello para no repetir el aviso
         var nuevoNombre = "[⏳] " + tarjeta.name;
@@ -212,7 +212,7 @@ function notificarResueltos() {
         cuerpoMensajeRes += comentarioResolucion + "\n\n";
         cuerpoMensajeRes += "¿Todo funciona bien ahora? Si el problema persiste, no dudes en volver a avisarnos.\n\n¡Un saludo y buena clase!";
         
-        GmailApp.sendEmail(emailDestinoRes, asuntoRes, cuerpoMensajeRes);
+        MailApp.sendEmail(emailDestinoRes, asuntoRes, cuerpoMensajeRes);
         
         // Si venía de "Bloqueada", le limpiamos el reloj de arena antes de ponerle el check definitivo
         var nombreSinReloj = tarjetaRes.name.replace('[⏳] ', '');
